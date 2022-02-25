@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Counter JS</title>
+        <style>
+            main{                
+                padding:50px 50px 50px 50px;                
+                box-shadow: 10px 10px 3px #ccc;
+                text-align: center;/*make main element centered on the screen*/
+                width: 300px;
+                height: 100px;               
+                background-color: white;
+                margin-left: 550px;
+            }
+            button{
+                padding:10px;
+                color: white;
+                cursor: pointer; /*make buttons clickable*/
+            }
+            #increment{
+                background-color: blue;
+                border: 2px solid blue;
+            }
+            #decrement{
+                background-color: orange;
+                border: 2px solid yellow;
+            }
+            #reset{
+                background-color: lightgreen;
+                border: 2px solid lightgreen;
+            }
+            #counter{
+                font-size: 50px;
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="padding-top: 200px;padding-bottom: 50px; text-align: center;">Counter JS</h1>
+        <main>
+            <div id="counter">
+                0
+            </div>
+            <div class="buttons">
+                <button id="increment">Increment</button>
+                <button id="reset">Reset</button>
+                <button id="decrement">Decrement</button>
+            </div>              
+        </main>
+        <script>
+            //Get the tag elements
+            const counter = document.getElementById('counter')
+            const incrementBtn = document.getElementById('increment')
+            const resetBtn = document.getElementById('reset')
+            const decrementBtn = document.getElementById('decrement')
+
+            //initialize a count variable
+            let counterValue = 0;
+
+            //add an event listener to the buttons
+            incrementBtn.addEventListener('click', function (event) {
+                counterValue +=1;
+                counter.innerHTML = counterValue;//sets the value of the div id counter
+            } )
+
+            decrementBtn.addEventListener('click', function (event) {
+                counterValue -=1;
+                counter.innerHTML = counterValue;//sets the value of the div id counter
+            } )
+
+            resetBtn.addEventListener('click', function (event) {
+                counterValue = 0;
+                counter.innerHTML = counterValue;//sets the value of the div id counter
+            } )
+
+        </script>
+    </body>
+</html>
